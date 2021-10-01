@@ -15,11 +15,13 @@ class EmpleadoHoras : public Empleado {
 
     public: 
         EmpleadoHoras(int,string,string,string,int,int);
+        ~EmpleadoHoras();
+
         void agregarSubordinado(Empleado *subordinado);
         virtual int de_id_empleado(); 
         virtual string de_Nombre();
 
-        friend ostream& operator << (ostream &output, const Empleado &empleado);
+        friend ostream& operator << (ostream &output, const EmpleadoHoras &empleado);
 }; 
 #endif
 

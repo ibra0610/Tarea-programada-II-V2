@@ -2,12 +2,14 @@
 #define EMPLEADO_H 
 #include <iostream> 
 
+
 using namespace std; 
 
 class Empleado{
 
     protected: 
     Empleado() { }
+
 
     public: 
     ~Empleado() {} 

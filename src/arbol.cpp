@@ -64,3 +64,26 @@ ostream& operator << (ostream &output, const Arbol &arbol)
 
     return output;
 }
+
+istream& operator >> (istream &input, Arbol &arbol){
+    string hilera = ""; 
+
+    int idEmpleado, tipoEmpleado, idSupervisor;
+    string nombre, apellido, email; 
+
+    while (getline(input,hilera)){
+        idEmpleado = 0;
+        tipoEmpleado= 0;
+        idSupervisor = 0;
+        nombre = ""; 
+        apellido = ""; 
+        email = ""; 
+
+        istringstream stream (hilera); 
+        stream >> idEmpleado >> nombre >> apellido >> email >> tipoEmpleado >> idSupervisor; 
+
+        arbol.agregarEmpleado(idEmpleado, nombre, apellido, email, tipoEmpleado, idSupervisor);
+    }
+
+    return input;
+}
